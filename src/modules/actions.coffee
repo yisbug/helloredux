@@ -1,12 +1,7 @@
 module.exports =
-    change:->
+    change:(title)->
         type:'change'
+        title: title
     timer:(interval)->
         type:'timer'
         interval:interval
-    add:(text)->
-        type:'add'
-        text:text
-    del:(id)->
-        type:'del'
-        id:id

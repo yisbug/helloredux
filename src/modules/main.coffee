@@ -12,6 +12,12 @@ actions = require './actions'
 App = require './app'
 
 
+dispatch = store.dispatch
+store.dispatch = (action)->
+    console.log action
+    dispatch.apply store,arguments
+
+
 # 选择state的某部分数据，使用connect连接到App组件
 mapState = (state)->
     state
@@ -26,3 +32,6 @@ React.render rootComponent,document.body
 setInterval ->
     store.dispatch actions.timer(+new Date)
 ,1000
+
+
+
